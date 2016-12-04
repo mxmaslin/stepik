@@ -7,9 +7,6 @@
 # update Django
 #sudo pip install --upgrade django
 
-# Run NGINX
-# sudo nginx
-
 # creating project structure
 mkdir -p /home/box/web/etc/
 mkdir -p /home/box/web/uploads/
@@ -22,7 +19,9 @@ sudo rm -rf /etc/nginx/nginx.conf
 cp nginx.conf /home/box/web/etc
 sudo ln -s /home/box/web/etc/nginx.conf /etc/nginx/nginx.conf
 
+# Run NGINX
 sudo nginx
+
 
 # Configure Gunicorn and echo WSGI server
 #cp ./files/hello.py /home/box/web/
