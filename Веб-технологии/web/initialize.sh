@@ -24,9 +24,11 @@ sudo nginx
 
 
 # Configure Gunicorn and echo WSGI server
-#cp ./files/hello.py /home/box/web/
-#cp ./conf/hello.py /home/box/web/etc/
-#sudo ln -sf /home/box/web/etc/hello.py /etc/gunicorn.d/hello.py
+cp hello.py /home/box/web/
+cp ./conf/hello.py /home/box/web/etc/
+sudo ln -sf /home/box/web/etc/hello.py /etc/gunicorn.d/hello.py
+sudo /etc/init.d/gunicorn restart
+sudo gunicorn -b 0.0.0.0:8080 hello:application
 
 # cp -r /home/box/stepic_course_web/ask /home/box/web
 # cd /home/box/web/ask
