@@ -1,0 +1,14 @@
+<div>{{ question.title }}</div>
+<div>{{ question.text }}</div>
+
+<form method="POST">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<div>
+		<button type="submit">Submit</button>
+	</div>
+</form>
+
+{% for answer in answers %}
+<div>{{ answer.text }}</div>
+{% endfor %}

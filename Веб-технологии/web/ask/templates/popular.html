@@ -1,0 +1,19 @@
+{% for question in questions %}
+	<div>{{ question }}</div>
+{% endfor %}
+
+{% if paginator.has_previous %}
+    <a href="{{paginator.baseurl}}{{paginator.previous_page_number}}}">←</a>    
+{% endif %}
+ 
+{% for num in paginator.page_range %}
+    {% if num == questions.number %}
+        <span><b>{{ num }}</b></span>
+    {% else %}
+        <a href="{{paginator.baseurl}}{{ num }}"> {{ num }}</a>
+    {% endif %} 
+{% endfor %}
+ 
+{% if paginator.has_next %}
+    <a href="{{paginator.baseurl}}{{ paginator.next_page_number }}">→</a>
+{% endif %}
